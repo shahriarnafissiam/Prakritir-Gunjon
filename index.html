@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<htmllang="bn">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-wodth,initial-scale=1.0">
+        <title>প্রকৃতির গুঞ্জন </title>
+        <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+        <link rel="preconnect"
+        href="https://fonts.gstatic.com" crossorigin>
+        <link 
+        href="https://fonts.googleapis.com/css2?family=No to+Sans+Bengali:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    </head>
+    <body>
+        <div id="loader">
+    <div class="loader-card">
+
+        <div class="loader-icon">
+            <span class="zzz">z<small>z</small><small>z</small></span>
+            <svg viewBox="0 0 120 120" class="loader-leaf" aria-hidden="true">
+                <path d="M60 104 C16 84 14 38 60 12 C106 38 104 84 60 104Z" fill="#22c55e"/>
+                <path d="M60 104 C28 98 12 78 14 56 C40 60 58 78 60 104Z" fill="#16a34a"/>
+                <path d="M60 104 C92 98 108 78 106 56 C80 60 62 78 60 104Z" fill="#15803d"/>
+                <path d="M60 100 L60 24" stroke="#0f5c36" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+        </div>
+
+        <h1 class="loader-title">প্রকৃতির গুঞ্জন</h1>
+
+        <!-- ekhane tomar nijer lekha dao -->
+        <p class="loader-msg" id="loaderMsg">চ্যাগায়া যাবেন না একটু অপেক্ষা করুন লোড হচ্ছে..</p>
+
+        <div class="loader-bar"><div class="loader-fill" id="loaderFill"></div></div>
+
+        <!-- ekhane o nijer lekha dao -->
+        <p class="loader-sub">একটু ধৈর্য ধরো প্রকৃতিপ্রেমী..🌿</p>
+
+        <span class="fl fl1">🍃</span>
+        <span class="fl fl2">🍃</span>
+        <span class="fl fl3">🍃</span>
+    </div>
+</div>
+        <div class="navbar">
+            <b> প্রকৃতির গুঞ্জন </b>
+
+            <div> 
+                <a href="index.html" class="active">হোম </a>
+                <a href="about.html"> পরিচিতি </a>
+                <a href="service.html"> প্রকৃতির সেবা </a>
+                <a href="contact.html"> যোগাযোগ </a>
+            </div>
+        </div>
+        <div class="slideshow"> 
+
+            <img class="slide active" src="w6.jpg"> 
+            <img class="slide" src="w2.jpg">
+            <img class="slide" src="w1.jpg">
+            <img class="slide" src="w3.jpg">
+            <img class="slide" src="n5.jpg">
+            <img class="slide" src="b2.jpg">
+            <img class="slide" src="w5.jpg">
+            <img class="slide" src="w4.jpg">
+            <div class="hero-text">
+                <h1>প্রকৃতির গুঞ্জন </h1>
+                <p>প্রকৃতির প্রতিটি উপাদান একটি গল্প বলে...</p>
+            </div>
+            </div>
+         <h2 style="text-align:center;color:green">আসুন একটু প্রকৃতির সঙ্গে আলাপ করি </h2>
+
+         <form class="search" id="ingredientSearch">
+            <input 
+            type="search"  
+            id="searchInput"
+            placeholder="বলুন কার গুষ্টির খবর জানতে চান...">
+            <button type="submit">
+            <svg width="20" height="20" viewBox="0 0 24 24"
+     fill="none" stroke="currentColor"
+     stroke-width="2.5" stroke-linecap="round">
+    <circle cx="11" cy="11" r="7"></circle>
+    <path d="m16 16 4 4"></path>
+         </svg> Search</button>
+         </form>
+         <div Id="searchResults"></div>
+        <style>
+            .navbar b{
+                color:white;
+                font-size: 20px;
+                font-weight: bold;
+                
+            }
+            img:not(.slide) {
+    width:70%;
+    max-width:750px;
+    display:block;
+    margin:10px auto 0;
+    border-radius: 15px;
+    -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+}
+            .navbar{
+                background:#071b16;
+                padding: 8px 18px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                box-shadow: 0 0 15px #39FF14;
+                border-bottom: 1px solid #39FF14;
+
+            }
+            .navbar b{
+                color:white;
+                font-size: 20px;
+                font-weight: bold;
+            }
+            .navbar a{
+                color: #39FF14;
+                font-weight: bold;
+                text-decoration: none;
+                margin-left: 16px;
+                text-shadow: 0 0 8px #39FF1480;
+            }
+            .navbar a {
+                color: white;
+                font-weight: bold;
+                text-decoration: none;
+                margin-left: 16px;
+
+            }
+            .navbar a:hover{
+                color:lime;
+            }
+                body{
+        margin:0;
+        background: #f2faf7;
+    }
+       h2 {
+            text-align:center;
+            color: #17664a;
+            margin-top: 20px;
+        }
+
+        .slideshow .slide.active{
+            opacity: 1;
+        }
+        h2 {
+            text-align: center;
+            color :#17664a;
+            margin: 12px 0;
+        }
+        .search{
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin: 14px auto;
+
+        }
+        .search input {
+            width: 280px;
+            max-width: 65%;
+            padding: 4px 7px;
+            border: 1px solid #9bd8b8;
+            border-radius: 25px;
+            outline: none;
+            box-shadow: 0 0 8px #79d9a5;
+        }
+        .search button,
+        .serch input[type="submit"] { 
+            background: #17664a;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 6px 16px;
+            cursor: pointer;
+        }
+        body {
+    position: relative;
+    isolation: isolate;
+    background: #f2faf7;
+}
+
+body::before,
+body::after {
+    position: fixed;
+    top: 20%;
+    width: 110px;
+    height: 65vh;
+    color: #238b62;
+    opacity: 0.13;
+    font-size: 55px;
+    line-height: 1.8;
+    white-space: pre-line;
+    pointer-events: none;
+    z-index: -1;
+}
+
+body::before {
+    content: "❧\A 🍃\A ❦\A 🍃";
+    left: 0;
+    transform: rotate(-12deg);
+}
+
+body::after {
+    content: "🍃\A ❦\A 🍃\A ❧";
+    right: 0;
+    transform: rotate(12deg);
+}
+.slideshow .slide{
+    position:absolute;
+    inset:0;
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+.slideshow .slide.active {
+    opacity:1;
+
+}
+body {
+    font-family: 'Noto Sans Bengali', sans-serif;
+    font-size: 17px;
+    line-height: 1.9;
+    color: #26382f;
+    background: #f2faf7;
+}
+
+/* মূল শিরোনাম */
+h2 {
+    text-align: center;
+    color: #17664a;
+    font-size: 27px;
+    font-weight: 700;
+    margin: 24px auto;
+}
+
+/* সার্চ বক্স */
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px auto;
+}
+
+.search input {
+    font-family: inherit;
+    font-size: 17px;
+}
+
+/* সার্চের ফলাফল মাঝখানে */
+#searchResults {
+    width: 92%;
+    max-width: 900px;
+    margin: 30px auto;
+    text-align: left;
+}
+
+/* রেজাল্টের শিরোনাম */
+#searchResults h2 {
+    color: #17664a;
+    font-size: 28px;
+    text-align: center;
+}
+
+#searchResults h3,
+#searchResults h4 {
+    color: #17664a;
+    font-size: 21px;
+    margin-top: 24px;
+}
+
+/* রেজাল্টের লেখা */
+#searchResults p,
+#searchResults li {
+    font-size: 17px;
+    line-height: 1.9;
+}
+
+/* তথ্যসূত্রের লিংক */
+#searchResults a {
+    color: #087f8c;
+    overflow-wrap: anywhere;
+}
+
+/* ছোট স্ক্রিনে সার্চ বক্স */
+@media (max-width: 600px) {
+    #searchResults {
+        width: 90%;
+    }
+
+    h2 {
+        font-size: 23px;
+    }
+
+    #searchResults p,
+    #searchResults li {
+        font-size: 16px;
+    }
+}
+#searchResults{
+    box-sizing: border-box;
+    width: 92%;
+    max-width: 900px;
+    margin: 35px auto;
+    padding: 28px;
+    background: #ffffff;
+    border :1px solid #d7eadc;
+    border-radius: 20px;
+    box-shadow: 0 8px 28px rgba(23, 102, 74, 0.10);
+    color: #293b31;
+}
+#searchReslts h2{
+    text-align:center;
+    color:#17664a;
+    font-size: 30px;
+    margin: 0 0 20px;
+}
+#searchResults h3 {
+    color: #17664a;
+    font-size: 22px;
+    border-bottom: 2px solid #dcefe2;
+    padding-bottom: 8px;
+    margin-top: 28px;
+}
+
+/* Lists and paragraphs */
+#searchResults p,
+#searchResults li {
+    font-size: 17px;
+    line-height: 1.9;
+}
+
+#searchResults li {
+    padding-left: 4px;
+    margin-bottom: 8px;
+}
+
+/* Source links */
+#searchResults a {
+    color: #087f8c;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+/* Mobile layout */
+@media (max-width: 600px) {
+    #searchResults {
+        width: 94%;
+        padding: 18px;
+    }
+
+    #searchResults h2 {
+        font-size: 25px;
+    }
+
+    #searchResults h3 {
+        font-size: 20px;
+    }
+}
+#searchResults:empty{
+    display: none;
+}
+#searchResults {
+    border: 1px solid #a8e6bd;
+    box-shadow:
+        0 0 12px rgba(57, 255, 20, 0.20),
+        0 0 28px rgba(34, 197, 94, 0.18),
+        0 8px 28px rgba(23, 102, 74, 0.10);
+
+    transition: box-shadow 0.3s ease;
+}
+
+/* Mouse card-er upor nile glow ektu barbe */
+#searchResults:hover {
+    box-shadow:
+        0 0 16px rgba(57, 255, 20, 0.30),
+        0 0 36px rgba(34, 197, 94, 0.25),
+        0 8px 28px rgba(23, 102, 74, 0.12);
+}
+
+/* Search na korle faka card dekhabe na */
+#searchResults:empty {
+    display: none;
+}
+.slideshow {
+    position: relative !important;
+    display: block;
+    width: calc(100% - 80px) !important;
+    max-width: 1500px !important;
+    height: 420px !important;
+    margin: 22px auto 12px !important;
+    overflow: hidden;
+    border-radius: 18px;
+    -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 87%, transparent 100%);
+}
+.slideshow + h2 {
+    margin-top: 4px !important;
+    margin-bottom: 8px !important;
+}
+
+.search {
+    margin-top: 6px !important;
+}
+
+@media (max-width: 600px) {
+    .slideshow {
+        height: 230px !important;
+    }
+}
+.slideshow .hero-text {
+    position: absolute;
+    z-index: 5;
+    left: 35px;
+    bottom: 28px;
+    top: auto;
+    transform: none;
+    max-width: 80%;
+    color: white;
+    text-align: left;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.9);
+    pointer-events: none;
+}
+
+.slideshow .hero-text h1 {
+    margin: 0;
+    color: white;
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 800;
+}
+
+.slideshow .hero-text p {
+    margin: 5px 0 0;
+    color: white;
+    font-size: clamp(14px, 2vw, 20px);
+}
+.slideshow .hero-text p span {
+    color: #7dff9a !important;
+}
+
+.slideshow::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.20),
+        transparent 70%
+    );
+    pointer-events: none;
+}
+
+@media (max-width: 600px) {
+    .slideshow .hero-text {
+        left: 16px;
+        bottom: 18px;
+        max-width: 90%;
+    }
+}
+/* বড় Search Box */
+.search {
+    width: min(760px, 88%);
+    margin: 20px auto !important;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.search input {
+    box-sizing: border-box;
+    flex: 1;
+    width: auto;
+    min-width: 0;
+    max-width: none;
+    padding: 15px 22px;
+    font-size: 17px;
+    border: 2px solid #b8d9c2;
+    border-radius: 32px;
+    background: white;
+}
+
+.search button {
+    flex-shrink: 0;
+    padding: 14px 24px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 32px;
+    background: #176b43;
+    box-shadow: 0 4px 14px rgba(23, 107, 67, 0.2);
+}
+
+.search button:hover {
+    background: #105333;
+}
+
+@media (max-width: 600px) {
+    .slideshow .hero-text {
+        left: 5%;
+        right: 5%;
+    }
+
+    .search {
+        width: 92%;
+        gap: 7px;
+    }
+
+    .search input {
+        padding: 12px 14px;
+        font-size: 15px;
+    }
+
+    .search button {
+        padding: 12px 16px;
+        font-size: 14px;
+    }
+}
+.search button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    white-space: nowrap;
+}
+
+.search button svg {
+    flex-shrink: 0;
+}
+/* Image kokhono screen er baire jabe na */
+img {
+    max-width: 100%;
+}
+
+/* Tablet (768px ba tar chhoto) */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 8px 12px;
+    }
+
+    .navbar b {
+        font-size: 17px;
+    }
+
+    .navbar a {
+        margin-left: 10px;
+        font-size: 14px;
+    }
+
+    .slideshow {
+        width: calc(100% - 40px) !important;
+        height: 320px !important;
+        margin-top: 25px !important;
+        border-radius: 14px;
+    }
+}
+
+/* Mobile (600px ba tar chhoto) */
+@media (max-width: 600px) {
+    .navbar {
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    .navbar b {
+        font-size: 16px;
+    }
+
+    .navbar a {
+        margin-left: 8px;
+        font-size: 13px;
+    }
+
+    .slideshow {
+        width: calc(100% - 24px) !important;
+        height: 220px !important;
+        margin: 16px auto 10px !important;
+        border-radius: 12px;
+    }
+
+    .slideshow .hero-text {
+        left: 14px;
+        right: 14px;
+        bottom: 16px;
+    }
+
+    .slideshow .hero-text h1 {
+        font-size: 26px;
+    }
+
+    .slideshow .hero-text p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    h2 {
+        font-size: 20px;
+        margin: 14px 10px;
+    }
+
+    .search {
+        width: 94%;
+    }
+}
+
+/* Khub chhoto phone (400px ba tar chhoto) */
+@media (max-width: 400px) {
+    .slideshow {
+        height: 190px !important;
+    }
+
+    .slideshow .hero-text h1 {
+        font-size: 22px;
+    }
+
+    .navbar a {
+        margin-left: 6px;
+        font-size: 12px;
+    }
+}
+/* Search box ektu slim */
+.search input {
+    padding: 10px 20px !important;
+    font-size: 16px;
+}
+
+.search button {
+    padding: 9px 20px !important;
+    font-size: 15px;
+}
+@media (max-width: 600px) {
+    .search input {
+        padding: 9px 14px !important;
+    }
+    .search button {
+        padding: 8px 14px !important;
+    }
+}
+/* ===== Loading Window (final) ===== */
+
+/* Default e lukano thakbe, JS "show" class dile dekhabe */
+#loader {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(7, 27, 22, 0.35);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+#loader.show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.loader-card {
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    width: min(400px, 88%);
+    padding: 20px 26px 18px;
+    text-align: center;
+    background: linear-gradient(
+        135deg,
+        rgba(244, 255, 249, 0.82),
+        rgba(214, 245, 227, 0.66)
+    );
+    backdrop-filter: blur(18px) saturate(150%) brightness(1.08);
+    -webkit-backdrop-filter: blur(18px) saturate(150%) brightness(1.08);
+    border: 1.5px solid rgba(255, 255, 255, 0.75);
+    border-radius: 26px;
+    box-shadow:
+        0 0 18px rgba(57, 255, 20, 0.30),
+        0 0 46px rgba(34, 197, 94, 0.24),
+        inset 0 1px 2px rgba(255, 255, 255, 0.9),
+        0 16px 40px rgba(0, 0, 0, 0.20);
+    animation: cardGlow 2.5s ease-in-out infinite;
+}
+
+@keyframes cardIn {
+    from { opacity: 0; transform: translateY(25px) scale(0.92); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes cardGlow {
+    0%, 100% {
+        box-shadow: 0 0 18px rgba(57,255,20,0.35), 0 0 45px rgba(34,197,94,0.28), 0 20px 50px rgba(0,0,0,0.25);
+    }
+    50% {
+        box-shadow: 0 0 28px rgba(57,255,20,0.6), 0 0 70px rgba(34,197,94,0.45), 0 20px 50px rgba(0,0,0,0.25);
+    }
+}
+
+/* Pata icon */
+.loader-icon {
+    position: relative;
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 2px;
+}
+
+.loader-leaf {
+    width: 100%;
+    height: 100%;
+    transform-origin: 50% 90%;
+    animation: sway 2.6s ease-in-out infinite;
+    filter: drop-shadow(0 4px 6px rgba(21, 128, 61, 0.35));
+}
+
+@keyframes sway {
+    0%, 100% { transform: rotate(-7deg) scale(1); }
+    50%      { transform: rotate(7deg) scale(1.06); }
+}
+
+/* zzz */
+.zzz {
+    position: absolute;
+    top: 0;
+    right: -10px;
+    color: #15803d;
+    font-weight: 800;
+    font-size: 17px;
+    line-height: 1;
+}
+
+.zzz small {
+    display: inline-block;
+    font-size: 0.8em;
+    margin-left: 2px;
+}
+
+.zzz,
+.zzz small {
+    animation: zzzFloat 2.2s ease-in-out infinite;
+}
+
+.zzz small:nth-child(1) { animation-delay: 0.3s; }
+.zzz small:nth-child(2) { animation-delay: 0.6s; }
+
+@keyframes zzzFloat {
+    0%, 100% { opacity: 0.25; transform: translateY(4px); }
+    50%      { opacity: 1;    transform: translateY(-5px); }
+}
+
+/* Lekha */
+.loader-title {
+    margin: 2px 0 4px;
+    color: #0f5c36;
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.loader-msg {
+    min-height: 24px;
+    margin: 0 0 10px;
+    color: #14532d;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.loader-sub {
+    margin: 9px 0 0;
+    color: #166534;
+    font-size: 13px;
+}
+
+/* Progress bar */
+.loader-bar {
+    height: 10px;
+    overflow: hidden;
+    background: rgba(195, 232, 207, 0.7);
+    border-radius: 20px;
+}
+.loader-title {
+    color: #0b4a2b;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.loader-msg {
+    color: #0f3d24;
+}
+
+.loader-sub {
+    color: #0b4a2b;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.loader-bar {
+    background: rgba(255, 255, 255, 0.55);
+    box-shadow: inset 0 1px 3px rgba(23, 102, 74, 0.2);
+}
+
+.loader-fill {
+    width: 0;
+    height: 100%;
+    border-radius: 20px;
+    background: linear-gradient(90deg, #16a34a, #4ade80, #16a34a);
+    background-size: 200% 100%;
+    animation: shine 1.4s linear infinite;
+}
+
+@keyframes shine {
+    from { background-position: 200% 0; }
+    to   { background-position: 0 0; }
+}
+
+/* Vasha pata */
+.fl {
+    position: absolute;
+    top: -30px;
+    font-size: 18px;
+    opacity: 0.7;
+    pointer-events: none;
+    animation: fall 6s linear infinite;
+}
+
+.fl1 { left: 12%; animation-delay: 0s; }
+.fl2 { left: 50%; animation-delay: 2s; font-size: 15px; }
+.fl3 { left: 82%; animation-delay: 4s; }
+
+@keyframes fall {
+    0%   { transform: translateY(0) rotate(0deg); opacity: 0; }
+    15%  { opacity: 0.7; }
+    100% { transform: translateY(240px) rotate(280deg); opacity: 0; }
+}
+/* Mobile */
+@media (max-width: 500px) {
+    .loader-title { font-size: 20px; }
+    .loader-msg   { font-size: 13px; }
+    .loader-icon  { width: 90px; height: 90px; }
+}
+body { animation: homeIn 0.45s ease; }
+@keyframes homeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+.site-footer {
+    margin-top: auto;
+    padding: 8px 12px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #d9f7e4;
+    background: #071b16;
+    border-top: 1px solid #39FF14;
+    box-shadow: 0 0 12px rgba(57, 255, 20, 0.4);
+}
+
+@media (max-width: 600px) {
+    .site-footer {
+        padding: 6px 10px;
+        font-size: 12.5px;
+    }
+}
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.site-footer {
+    margin-top: auto;
+}
+body > * {
+    flex-shrink: 0;
+}
+
+.slideshow {
+    align-self: center;
+}
+
+.search,
+#searchResults,
+h2 {
+    align-self: center;
+}
+body > * {
+    flex-shrink: 0;
+}
+
+.slideshow {
+    align-self: center;
+}
+
+.search,
+#searchResults,
+h2 {
+    align-self: center;
+}
+body > h2 {
+    width: 100%;
+}
+     </style>
+        <script>
+            const slides = document.querySelectorAll(".slide");
+            let current = 0;
+
+            setInterval(function (){
+               slides[current].classList.remove ("active");
+               current =(current+1) %slides.length;
+                slides[current].classList.add("active");
+
+
+            }, 3500);
+            </script>
+<script>
+const funMessages = [
+    { main: "চ্যাগায়া যাবেন না 🥴 একটু অপেক্ষা করুন লোড হচ্ছে..", sub: "একটু ধৈর্য ধরো প্রকৃতিপ্রেমী..🥹" },
+    { main: "এত তাড়া কিসের 🤨 ,প্রকৃতির সংগে মিটিং চলছে ..",                    sub: "একটু ধৈর্য ধরো প্রকৃতিপ্রেমী..🥹" },
+    { main: "প্রকৃতির গোপন ডায়েরি খোলা হচ্ছে...🫡",                     sub: "ততক্ষণে একটু বাদাম খেয়ে নিতে পারেন ব্রেইন এর জন্য বেশ উপকারী 🫡 " },
+    { main: "প্রকৃতি আধুনিকতার জ্যামে আটকে গেছে 🥹 ",                     sub: "আশা করছি আগামী ঈদের আগে পৌঁছাবে 🙂" },
+    { main: "নেট স্লো, কলা খেয়ে ফিরছে 🫡",                               sub: "আপনি চাইলে ততক্ষণে একাটা কলা খেয়ে নিতে পারেন 🙂"},
+    { main: "খরগোশকে পাঠিয়েছিলাম খবর আনতে, কিন্তু সে ভেজার সবজির তরকারি খেয়ে অসুস্থ হয়ে গেছে 😔", sub: "সে ফিরতে ফিরতে আপনি একটু পানি খেয়ে নিন 🙂"},
+    { main: "আধুনিকতার কোলাহলে প্রকৃতির ডায়েরিতে ধুলো জমেছে 😔" , sub : "ধুলো পরিষ্কার করতে একটু সময় লাগবে🥹 " },
+    {main: "বসে না থেকে একটু খেজুর খান 🙂", sub: "শক্তি বাড়বে 😩"},
+    {main: "প্রকৃতি ট্রাফিক জ্যামে আটকে আছে  🥹", sub: "বসে না থেকে ততক্ষণে একটু পানি খান 😩"}
+];
+
+const LOADER_MIN = 4500;   // loader kom pokkhe koto ms thakbe (3500 = 3.5 sec)
+
+let lastMsgIndex = -1;
+function pickMessage() {
+    if (funMessages.length === 1) return funMessages[0];
+    let n;
+    do {
+        n = Math.floor(Math.random() * funMessages.length);
+    } while (n === lastMsgIndex);
+    lastMsgIndex = n;
+    return funMessages[n];
+}
+
+function showLoader() {
+    return new Promise(function (resolve) {
+        const loader = document.getElementById("loader");
+        const fill   = document.getElementById("loaderFill");
+        const msgEl  = document.getElementById("loaderMsg");
+        const subEl  = document.querySelector(".loader-sub");
+
+        const m = pickMessage();
+        msgEl.textContent = m.main;
+        subEl.textContent = m.sub;
+
+       
+        fill.style.transition = "none";
+        fill.style.width = "0%";
+        void fill.offsetWidth;
+        fill.style.transition = "width " + LOADER_MIN + "ms linear";
+        fill.style.width = "100%";
+
+        loader.classList.add("show");
+        document.body.style.overflow = "hidden";
+
+        setTimeout(function () {
+            loader.classList.remove("show");
+            document.body.style.overflow = "";
+            setTimeout(resolve, 500);   
+        }, LOADER_MIN);
+    });
+}
+</script>
+<script>
+const searchForm = document.getElementById("ingredientSearch");
+const searchInput = document.getElementById("searchInput");
+const searchResults = document.getElementById("searchResults");
+
+searchForm.addEventListener("submit", async function(event) {
+       event.preventDefault();
+
+    if (document.getElementById("loader").classList.contains("show")) return;
+    const query = searchInput.value
+    .trim()
+    .toLowerCase()
+    .replace(/এর উপকারিতা|র উপকারিতা|এর পার্শ্বপ্রতিক্রিয়া|র পার্শ্বপ্রতিক্রিয়া|এর সতর্কতা|র সতর্কতা/g, "")
+    .trim();
+
+    if (!query) {
+        searchResults.textContent = "আগে কোনো উপাদানের নাম লিখুন।";
+        return;
+    }
+
+    try {
+                // database fetch ar loader ekshathe cholbe, dutoi sesh hole tarpor result
+        const [response] = await Promise.all([
+            fetch("./Database/ingredients.json"),
+            showLoader()
+        ]);
+
+        if (!response.ok) {
+            throw new Error("JSON file paoya jayni");
+        }
+
+        const dbData = await response.json();
+        if (!dbData.data) {
+            throw new Error("JSON file er structure sothik noy");
+        }
+
+        let foundItem = null;
+
+        // ধাপ ১: প্রথমে একদম হুবহু মিল (Exact Match) খুঁজবে (যেমন: "আম" লিখলে শুধু আমই আসবে)
+        for (const category in dbData.data) {
+            const items = dbData.data[category];
+            if (Array.isArray(items)) {
+                foundItem = items.find(item => {
+                    const bnName = (item.bn_name || "").toLowerCase().trim();
+                    const name = (item.name || "").toLowerCase().trim();
+                    const enName = (item.en_name || "").toLowerCase().trim();
+                    return bnName === query || name === query || enName === query;
+                });
+                if (foundItem) break;
+            }
+        }
+
+        // ধাপ ২: হুবহু না পেলে, যা দিয়ে লেখা শুরু হয়েছে (Starts-with) তা খুঁজবে
+        if (!foundItem) {
+            for (const category in dbData.data) {
+                const items = dbData.data[category];
+                if (Array.isArray(items)) {
+                    foundItem = items.find(item => {
+                        const bnName = (item.bn_name || "").toLowerCase().trim();
+                        const name = (item.name || "").toLowerCase().trim();
+                        const enName = (item.en_name || "").toLowerCase().trim();
+                        return bnName.startsWith(query) || name.startsWith(query) || enName.startsWith(query);
+                    });
+                    if (foundItem) break;
+                }
+            }
+        }
+
+        // ধাপ ৩: অবশেষে সাধারণ আংশিক মিল (Includes) খুঁজবে (আলু, আদা, পেয়ারা ও অন্যান্য সবকিছুর জন্য)
+        if (!foundItem) {
+            for (const category in dbData.data) {
+                const items = dbData.data[category];
+                if (Array.isArray(items)) {
+                    foundItem = items.find(item => {
+                        const bnName = (item.bn_name || "").toLowerCase();
+                        const enName = (item.en_name || "").toLowerCase();
+                        const name = (item.name || "").toLowerCase();
+                        return bnName.includes(query) || enName.includes(query) || name.includes(query);
+                    });
+                    if (foundItem) break;
+                }
+            }
+        }
+        searchResults.replaceChildren();
+
+        if (!foundItem) {
+            searchResults.textContent = "ডেটাবেস চ্যাগায়া গেছে । এই উপাদানের তথ্য এখনো আমাদের ডেটাবেসে নেই। তবে নিরাশ হবেন না, ইনশাআল্লাহ খুব শীঘ্রই আমরা আপনার সার্চকৃত উপাদানের তথ্য আমাদের ডেটাবেসে যোগ করব । পর্বর্তীতে আবার আপনার উপাদানের নামটি সার্চ করার জন্য অনুরোধ রইলো । সাময়িক অসুবিধার জন্য আন্তরিকভাবে দুঃখিত ।";
+            reportMissing(query); 
+            return; 
+        }
+
+        // Nam o Baigganik nam Bangla horofe
+        const title = document.createElement("h2");
+        title.textContent = foundItem.bn_name || foundItem.name;
+        searchResults.appendChild(title);
+
+        const scientificName = document.createElement("p");
+        scientificName.textContent = "বৈজ্ঞানিক নাম: " + (foundItem.scientific_name || "প্রযোজ্য নয়");
+        searchResults.appendChild(scientificName);
+
+        // Shombhabo upokarita
+        const benefitsTitle = document.createElement("h3");
+        benefitsTitle.textContent = "সম্ভাব্য উপকারিতা";
+        searchResults.appendChild(benefitsTitle);
+
+        if (!foundItem.health_benefits || foundItem.health_benefits.length === 0) {
+            const p = document.createElement("p");
+            p.textContent = "উপকারিতার তথ্য এখনো যোগ করা হয়নি।";
+            searchResults.appendChild(p);
+        } else {
+            const ul = document.createElement("ul");
+            foundItem.health_benefits.forEach(benefit => {
+                const li = document.createElement("li");
+                li.textContent = benefit;
+                ul.appendChild(li);
+            });
+            searchResults.appendChild(ul);
+        }
+         // Scientific Facts (Baigganik tottho) section add kora holo
+        if (foundItem.scientific_facts && foundItem.scientific_facts.length > 0) {
+            const sciFactsTitle = document.createElement("h3");
+            sciFactsTitle.textContent = "Scientific Facts";
+            searchResults.appendChild(sciFactsTitle);
+
+            const sciFactsList = document.createElement("ul");
+            foundItem.scientific_facts.forEach(fact => {
+                const li = document.createElement("li");
+                li.textContent = fact;
+                sciFactsList.appendChild(li);
+            });
+            searchResults.appendChild(sciFactsList);
+        }
+
+        // Parshoprotikriya o sotorkota
+        const sideTitle = document.createElement("h3");
+        sideTitle.textContent = "সম্ভাব্য পার্শ্বপ্রতিক্রিয়া ও সতর্কতা";
+        searchResults.appendChild(sideTitle);
+
+        const sideList = document.createElement("ul");
+        if (foundItem.side_effects_and_warnings && foundItem.side_effects_and_warnings.length > 0) {
+            foundItem.side_effects_and_warnings.forEach(effect => {
+                const li = document.createElement("li");
+                li.textContent = effect;
+                sideList.appendChild(li);
+            });
+        } else {
+            const li = document.createElement("li");
+            li.textContent = "কোনো বিশেষ পার্শ্বপ্রতিক্রিয়া নেই।";
+            sideList.appendChild(li);
+        }
+        searchResults.appendChild(sideList);
+
+        // Tottho sutro
+        if (foundItem.sources && foundItem.sources.length > 0) {
+            const sourceTitle = document.createElement("h3");
+            sourceTitle.textContent = "তথ্যসূত্র";
+            searchResults.appendChild(sourceTitle);
+
+            const sourceList = document.createElement("ul");
+            foundItem.sources.forEach(src => {
+                const li = document.createElement("li");
+                li.textContent = src;
+                sourceList.appendChild(li);
+            });
+            searchResults.appendChild(sourceList);
+        }
+
+    } catch (error) {
+        console.error(error);
+        searchResults.textContent = "Can't load information. There might be a technical issue with the server ";
+    }
+});
+// ডেটাবেসে নেই এমন সার্চ Web3Forms দিয়ে তোমার মেইলে যাবে
+const reportedQueries = new Set();   // একই শব্দ বারবার পাঠাবে না
+
+function reportMissing(q) {
+    if (!q) return;
+
+    let sent = [];
+    try { sent = JSON.parse(localStorage.getItem("reportedQueries") || "[]"); } catch (e) {}
+    if (sent.includes(q)) return;
+
+    sent.push(q);
+    try { localStorage.setItem("reportedQueries", JSON.stringify(sent)); } catch (e) {}
+
+    fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify({
+            access_key: "8415e710-fa56-4607-a243-638fc693be18",
+            subject: "প্রকৃতির গুঞ্জন: User search",
+            message: "ব্যবহারকারী খুঁজেছে: " + q +
+                     "\nসাইট: " + location.origin +
+                     "\nসময়: " + new Date().toLocaleString("bn-BD"),
+            botcheck: ""
+        })
+    }).catch(function () {});
+}
+</script>
+<script src="shared.js"></script>
+
+        </body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>পরিচিতি | প্রকৃতির গুঞ্জন</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="shared.css">
+
+    <style>
+        /* ===== Shudhu about page er design ===== */
+        .about-wrap {
+    display: flex;
+    align-items: flex-start;
+    gap: 36px;
+    width: 94%;
+    max-width: 1250px;
+    margin: 50px auto;
+}
+
+        /* ---- Baam: chobi ---- */
+        .photo-card {
+            flex: 0 0 290px;
+            position:sticky;
+            top:100px;
+            padding: 12px;
+            border-radius: 24px;
+            transform: rotate(-3deg);
+            background: linear-gradient(135deg, rgba(255,255,255,0.75), rgba(214,245,227,0.5));
+            backdrop-filter: blur(14px) saturate(150%);
+            -webkit-backdrop-filter: blur(14px) saturate(150%);
+            border: 1.5px solid rgba(255, 255, 255, 0.8);
+            box-shadow:
+                0 0 18px rgba(57, 255, 20, 0.28),
+                0 0 44px rgba(34, 197, 94, 0.22),
+                inset 0 1px 2px rgba(255, 255, 255, 0.9),
+                0 16px 36px rgba(23, 102, 74, 0.18);
+            transition: transform 0.4s ease;
+        }
+
+        .photo-card:hover {
+            transform: rotate(0deg) scale(1.02);
+        }
+
+        .photo-card img {
+            display: block;
+            width: 100%;
+            height: 340px;
+            object-fit: cover;
+            object-position: top;
+            border-radius: 16px;
+        }
+
+        /* ---- Dane: message card ---- */
+        .msg-card {
+            position: relative;
+            flex: 1;
+            padding: 30px 40px 26px;
+            border-radius: 26px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.80), rgba(214,245,227,0.58));
+            backdrop-filter: blur(16px) saturate(150%);
+            -webkit-backdrop-filter: blur(16px) saturate(150%);
+            border: 1.5px solid rgba(255, 255, 255, 0.85);
+            box-shadow:
+                0 0 20px rgba(57, 255, 20, 0.30),
+                0 0 50px rgba(34, 197, 94, 0.24),
+                inset 0 1px 2px rgba(255, 255, 255, 0.9),
+                0 16px 40px rgba(23, 102, 74, 0.15);
+            animation: msgGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes msgGlow {
+            0%, 100% {
+                box-shadow:
+                    0 0 16px rgba(57,255,20,0.24),
+                    0 0 40px rgba(34,197,94,0.18),
+                    inset 0 1px 2px rgba(255,255,255,0.9),
+                    0 16px 40px rgba(23,102,74,0.15);
+            }
+            50% {
+                box-shadow:
+                    0 0 26px rgba(57,255,20,0.45),
+                    0 0 64px rgba(34,197,94,0.34),
+                    inset 0 1px 2px rgba(255,255,255,0.9),
+                    0 16px 40px rgba(23,102,74,0.15);
+            }
+        }
+
+        .msg-label {
+            margin: 0 0 8px;
+            font-size: 14px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: #17664a;
+        }
+
+        .msg-text {
+            margin: 0 0 12px;
+            font-size: 16.5px;
+            font-weight:500px;
+            line-height: 1.85;
+            font-style: italic;
+            color: #26382f;
+            margin-bottom: 13px;
+        }
+
+        .msg-name {
+            margin: 0;
+            font-size: 21px;
+            font-weight: 800;
+            color: #0b4a2b;
+        }
+
+        .msg-role {
+            margin: 0;
+            font-size: 15px;
+            font-weight: 600;
+            color: #4b7a63;
+        }
+
+        /* ---- Mobile: chobi upore, card niche ---- */
+        @media (max-width: 800px) {
+            .about-wrap {
+                flex-direction: column;
+                gap: 36px;
+                margin: 36px auto;
+            }
+            .photo-card {
+                flex: none;
+                width: 78%;
+                max-width: 320px;
+                position: static;
+            }
+            .photo-card img { height: 300px; }
+            .msg-card { padding: 34px 22px 24px; }
+            .msg-text { font-size: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <b>প্রকৃতির গুঞ্জন</b>
+        <div>
+            <a href="index.html">হোম</a>
+            <a href="about.html" class="active">পরিচিতি</a>
+            <a href="service.html">প্রকৃতির সেবা</a>
+            <a href="contact.html">যোগাযোগ</a>
+        </div>
+    </div>
+
+    <!-- Chobi (baam) + Message (dane) -->
+    <div class="about-wrap">
+
+        <div class="photo-card reveal from-left">
+            <img src="my2.jpeg" alt="প্রতিষ্ঠাতা">
+        </div>
+
+        <div class="msg-card reveal from-right">
+            <p class="msg-label"> Message </p>
+            <p class="msg-text">
+                আসসালামু আলাইকুম। 
+            </p>
+            <p class="msg-text">
+    প্রথমেই বলি, কেন এই ওয়েবসাইটটি বানালাম।
+</p>
+
+<p class="msg-text">
+    মহান আল্লাহ রব্বুল আলামিন আমাদের অগণিত নিয়ামতে ভরিয়ে রেখেছেন, আর প্রকৃতি তার সেরা নিয়ামতগুলোর মধ্যে একটি । 
+    এই প্রকৃতির মাঝে তিনি এমন সব নিয়ামত সাজিয়ে রেখেছেন, যা আমাদের কল্পনারও অতীত।
+    প্রতিদিন আমরা তা গ্রহণ করি, অথচ ভেবে দেখি না, এ কত বড় অনুগ্রহ।
+</p>
+
+<p class="msg-text">
+    কোন খাবারে কী পুষ্টি আছে, কী উপকার আছে, আবার কোনটি আমাদের শরীরে কী সমস্যা ডেকে আনতে পারে,
+    এসব না জেনেই আমরা খেয়ে চলি। তাই খুব সহজেই রোগ আমাদের আক্রান্ত করে ।
+    অথচ আল্লাহ তায়ালা প্রকৃতির মাঝেই সুস্থ থাকার ও বিভিন্ন রোগ প্রতিরোধের কত উপায় রেখে দিয়েছেন তা আমরা জানিই না ।
+    যদি জেনে-বুঝে খাদ্য গ্রহণ করতাম, তবে সতর্ক থাকতে পারতাম,
+    আর আল্লাহর রহমতে সুস্থ থাকাও হতো আরও সহজ।
+</p>
+
+<p class="msg-text">
+    এক সময় আধুনিক চিকিৎসা ছিল না, তখন মানুষের ভরসা ছিল এই প্রকৃতি আর ভেষজ ঔষধ ।
+    অথচ আজ শত আধুনিকতার ভিড়ে সেই প্রকৃতির মতো এত বড় নিয়ামতকেই আমরা অবহেলা করছি। 
+    শুধু অবহেলা নয় কখনো শুকরিয়াও আদায় করি না ।
+</p>
+
+<p class="msg-text">
+    তাই প্রকৃতির মত এই বড় নিয়ামতকে সবার মাঝে সহজ করে ছড়িয়ে দেয়ার লক্ষ্যেই আমার এই ওয়েবসাইটটি বানানো । এই ওয়েবসাইটে প্রকৃতির যেকোন উপাদানের নামটি লিখলেই আপনি জানতে পারবেন তার উপকারিতা ও পার্শ্বপ্রতিক্রিয়া সেই সাথে নানা scientific facts 
+    আর আলাদা আলাদা জায়গায় খুঁজে বেড়ানোর কষ্ট করতে হবে না । 
+</p>
+
+<p class="msg-text">
+    তবে মনে রাখবেন, এখানকার তথ্য সচেতনতার জন্য। কোনো রোগ হলে অবশ্যই চিকিৎসকের পরামর্শ নিন।
+</p>
+            <p class="msg-name">Shahriar Nafis </p>
+            <p class="msg-role">Founder </p>
+        </div>
+
+    </div>
+
+    <script src="shared.js"></script>
+</body>
+</html>
