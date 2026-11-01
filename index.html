@@ -911,6 +911,108 @@ h2 {
 body > h2 {
     width: 100%;
 }
+/* ===== Notice Popup ===== */
+#notice {
+    position: fixed;
+    inset: 0;
+    z-index: 99998;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(7, 27, 22, 0.35);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+#notice.show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.notice-card {
+    position: relative;
+    box-sizing: border-box;
+    width: min(380px, 88%);
+    padding: 26px 24px 20px;
+    text-align: center;
+    border-radius: 24px;
+    background: linear-gradient(135deg, rgba(244,255,249,0.88), rgba(214,245,227,0.72));
+    backdrop-filter: blur(16px) saturate(150%);
+    -webkit-backdrop-filter: blur(16px) saturate(150%);
+    border: 1.5px solid rgba(255, 255, 255, 0.8);
+    box-shadow:
+        0 0 20px rgba(57, 255, 20, 0.30),
+        0 0 48px rgba(34, 197, 94, 0.24),
+        inset 0 1px 2px rgba(255, 255, 255, 0.9),
+        0 16px 40px rgba(0, 0, 0, 0.20);
+    transform: translateY(20px) scale(0.94);
+    transition: transform 0.5s ease;
+}
+
+#notice.show .notice-card {
+    transform: none;
+}
+
+.notice-close {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    width: 30px;
+    height: 30px;
+    font-size: 15px;
+    line-height: 1;
+    color: #0b4a2b;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid #a8e6bd;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.notice-close:hover {
+    background: #d9f7e4;
+    transform: scale(1.1);
+}
+
+.notice-icon {
+    font-size: 40px;
+    line-height: 1;
+}
+
+.notice-title {
+    margin: 8px 0 6px;
+    font-size: 22px;
+    font-weight: 800;
+    color: #0b4a2b;
+}
+
+.notice-text {
+    margin: 0 0 14px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.7;
+    color: #1f3a2c;
+}
+
+/* Niche ekta chhoto bar, 4 sec e sesh hobe */
+.notice-bar {
+    height: 5px;
+    overflow: hidden;
+    background: rgba(195, 232, 207, 0.7);
+    border-radius: 20px;
+}
+
+.notice-fill {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #16a34a, #4ade80);
+    border-radius: 20px;
+}
      </style>
         <script>
             const slides = document.querySelectorAll(".slide");
@@ -931,7 +1033,7 @@ const funMessages = [
     { main: "প্রকৃতির গোপন ডায়েরি খোলা হচ্ছে...🫡",                     sub: "ততক্ষণে একটু বাদাম খেয়ে নিতে পারেন ব্রেইন এর জন্য বেশ উপকারী 🫡 " },
     { main: "প্রকৃতি আধুনিকতার জ্যামে আটকে গেছে 🥹 ",                     sub: "আশা করছি আগামী ঈদের আগে পৌঁছাবে 🙂" },
     { main: "নেট স্লো, কলা খেয়ে ফিরছে 🫡",                               sub: "আপনি চাইলে ততক্ষণে একাটা কলা খেয়ে নিতে পারেন 🙂"},
-    { main: "খরগোশকে পাঠিয়েছিলাম খবর আনতে, কিন্তু সে ভেজার সবজির তরকারি খেয়ে অসুস্থ হয়ে গেছে 😔", sub: "সে ফিরতে ফিরতে আপনি একটু পানি খেয়ে নিন 🙂"},
+    { main: "খরগোশকে পাঠিয়েছিলাম খবর আনতে, কিন্তু সে ভেজাল সবজির তরকারি খেয়ে অসুস্থ হয়ে গেছে 😔", sub: "সে ফিরতে ফিরতে আপনি একটু পানি খেয়ে নিন 🙂"},
     { main: "আধুনিকতার কোলাহলে প্রকৃতির ডায়েরিতে ধুলো জমেছে 😔" , sub : "ধুলো পরিষ্কার করতে একটু সময় লাগবে🥹 " },
     {main: "বসে না থেকে একটু খেজুর খান 🙂", sub: "শক্তি বাড়বে 😩"},
     {main: "প্রকৃতি ট্রাফিক জ্যামে আটকে আছে  🥹", sub: "বসে না থেকে ততক্ষণে একটু পানি খান 😩"}
@@ -1179,6 +1281,58 @@ function reportMissing(q) {
 }
 </script>
 <script src="shared.js"></script>
+<div id="notice">
+    <div class="notice-card">
+        <button class="notice-close" id="noticeClose" aria-label="বন্ধ করুন">✕</button>
+        <h3 class="notice-title">সার্চ করার নিয়ম </h3>
+        <!-- ekhane tomar nijer lekha dao -->
+
+
+<p class="notice-text">
+    প্রাকৃতিক যেকোন উপাদানের নাম বাংলায়, শুদ্ধ বানানে লিখে সার্চ করুন।
+    যেমন: আদা, লেবু, পেয়ারা।
+</p>
+        <div class="notice-bar"><div class="notice-fill" id="noticeFill"></div></div>
+    </div>
+</div>
+<script>
+(function () {
+    const SHOW_TIME = 7000;   // koto ms dekhabe (4000 = 4 sec)
+    const DELAY     = 600;    // page khulle koto ms por ashbe
+
+    const notice = document.getElementById("notice");
+    const fill   = document.getElementById("noticeFill");
+    const close  = document.getElementById("noticeClose");
+    if (!notice) return;
+
+    let hideTimer;
+
+    function hide() {
+        clearTimeout(hideTimer);
+        notice.classList.remove("show");
+    }
+
+    setTimeout(function () {
+        notice.classList.add("show");
+
+        // bar 100% theke 0% e nambe
+        fill.style.transition = "none";
+        fill.style.width = "100%";
+        void fill.offsetWidth;
+        fill.style.transition = "width " + SHOW_TIME + "ms linear";
+        fill.style.width = "0%";
+
+        hideTimer = setTimeout(hide, SHOW_TIME);
+    }, DELAY);
+
+    close.addEventListener("click", hide);
+
+    // fanka jayga e click korleo bondho hobe
+    notice.addEventListener("click", function (e) {
+        if (e.target === notice) hide();
+    });
+})();
+</script>
 
         </body>
 </html>
